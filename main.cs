@@ -6,13 +6,10 @@ public class Person
     public string BirthDate { get; set; }
     public string WorkPhoneNumber { get; set; }
     public string CellPhoneNumber { get; set; }
-}
 
-public static class PersonalInfo
-{
-    public static string Display(Person person)
+    public override string ToString()
     {
-        return $"{person.Name}\n{person.BirthDate}\nwork {person.WorkPhoneNumber}\ncell {person.CellPhoneNumber}";
+        return $"{Name}\n{BirthDate}\nwork {WorkPhoneNumber}\ncell {CellPhoneNumber}";
     }
 }
 
@@ -20,14 +17,13 @@ public class Program
 {
     public static void Main()
     {
-        // Sample data for demonstration
-        Person samplePerson = new Person 
+        var samplePerson = new Person 
         {
-            Name = "Francisco Isaac",
-            BirthDate = "01/16/2002",
-            WorkPhoneNumber = "813-847-3797",
-            CellPhoneNumber = "813-847-3797"
+            Name = "Lucinda Potter",
+            BirthDate = "6/24/1992",
+            WorkPhoneNumber = "000-000-0101",
+            CellPhoneNumber = "000-000-0189"
         };
-        Console.WriteLine(PersonalInfo.Display(samplePerson));
+        Console.WriteLine(samplePerson);
     }
 }
